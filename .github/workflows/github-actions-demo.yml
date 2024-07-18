@@ -5,10 +5,14 @@ on:
     branches: master
   pull_request:
     branches: master
-
   schedule:
     - cron: '15 6 * * *'
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        type: environment
+        required: true
     
     
 jobs:
